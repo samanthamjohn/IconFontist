@@ -1,0 +1,11 @@
+Format: <initials>: <name>[; <email>]
+Example:
+# .pairs - configuration for 'git pair'
+# place in project or home directory
+pairs:
+  sj: Samantha John; sam
+  hy: Han Yu; han
+email:
+  prefix: pair
+  domain: gethopscotch.com
+

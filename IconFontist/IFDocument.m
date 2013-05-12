@@ -7,7 +7,8 @@
 //
 
 #import "IFDocument.h"
-
+@interface IFDocument()<NSOpenSavePanelDelegate>
+@end
 @implementation IFDocument
 
 - (id)init
@@ -35,6 +36,33 @@
 + (BOOL)autosavesInPlace
 {
     return YES;
+}
+
+- (IBAction)saveDocument:(id)sender
+{
+    NSLog(@"================> %@", @"hello");
+}
+
+- (IBAction)Pressbutton:(id)sender {
+
+    NSOpenPanel *panel = [NSOpenPanel openPanel];
+
+    panel.allowsMultipleSelection = NO;
+    panel.canChooseDirectories = NO;
+    panel.canChooseFiles = YES;
+    panel.allowedFileTypes = @[@"svg", @"SVG"];
+    
+    if ( [panel runModal] == NSOKButton ){
+        
+
+//        NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:panel.URL];
+//        NSLog(@"================> %@, %@", parser, [parser parse] ? @"YES" : @"NO");
+
+        self.textCell.title = panel.URL.relativeString;
+    }
+    
+
+
 }
 
 @end

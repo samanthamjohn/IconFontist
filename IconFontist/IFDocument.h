@@ -9,5 +9,9 @@
 #import <Cocoa/Cocoa.h>
 
 @interface IFDocument : NSPersistentDocument
+@property (weak) IBOutlet NSButton *Hello;
+- (IBAction)Pressbutton:(id)sender;
+@property (weak) IBOutlet NSTextFieldCell *textCell;
+@property (weak) IBOutlet NSView *label;
 
 @end
